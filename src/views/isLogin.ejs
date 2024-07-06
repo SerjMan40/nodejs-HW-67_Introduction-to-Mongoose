@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>isLogin</title>
+  <link rel="stylesheet" type="text/css" href="/css/style.css">
+  <link rel="icon" href="/favicon.ico">
+</head>
+
+<body>
+  <% if (login) { %>
+    <h2>You have logged in successfully!!!</h2>
+    <a href="/users">Go to Users</a>
+    <a href="/articles">Go to Articles</a>
+    <a class="nav-link" href="/">Go to Home</a>
+  <% } else { %>
+    <h1 class="danjer">login or password is incorrect</h1>
+    <a href="/login">Go to login</a>
+  <% } %>
+</body>
+
+</html>

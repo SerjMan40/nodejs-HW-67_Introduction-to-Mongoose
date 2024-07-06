@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Articles</title>
+    <link rel="stylesheet" type="text/css" href="/css/style.css">
+    <link rel="icon" href="/favicon.ico">
+</head>
+<body>
+    <h1>Articles List</h1>
+    <ul>
+        <% if (articles.length > 0) { %>
+            <% articles.forEach(function(article) { %>
+                <li>
+                    <a href="/articles/<%= article._id %>"><%= article.title %></a>
+                </li>
+            <% }); %>
+        <% } else { %>
+            <li>No articles available.</li>
+        <% } %>
+    </ul>
+    <a class="nav-link" href="/articles/statistics">Go to statistics</a>
+    <a class="nav-link" href="/">Go to Home</a>
+</body>
+</html>

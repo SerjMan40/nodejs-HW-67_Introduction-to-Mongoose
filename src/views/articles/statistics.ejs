@@ -1,0 +1,40 @@
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Article Statistics</title>
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+<body class="body">
+  <div class="container">
+    <h1 class="header">Article Statistics</h1>
+    <table class="stats-table">
+      <thead>
+        <tr>
+          <th class="table-header">Framework</th>
+          <th class="table-header">Total Articles</th>
+          <th class="table-header">Year Range</th>
+          <th class="table-header">Titles (Year)</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% statistics.forEach(stat => { %>
+          <tr>
+            <td class="table-cell"><%= stat._id %></td>
+            <td class="table-cell"><%= stat.totalArticles %></td>
+            <td class="table-cell"><%= stat.minYear %> - <%= stat.maxYear %></td>
+            <td class="table-cell">
+              <ul class="title-list">
+                <% stat.titlesWithYears.forEach(item => { %>
+                  <li class="title-item"><%= item.title %> (<%= item.year %>)</li>
+                <% }) %>
+              </ul>
+            </td>
+          </tr>
+        <% }) %>
+      </tbody>
+    </table>
+    <a class="nav-link" href="/articles">Go to articles</a>
+  </div>
+</body>
+</html>
